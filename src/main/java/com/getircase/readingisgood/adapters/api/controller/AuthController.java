@@ -1,4 +1,4 @@
-package com.getircase.readingisgood.adapters.api;
+package com.getircase.readingisgood.adapters.api.controller;
 
 import com.getircase.readingisgood.adapters.api.request.LoginRequest;
 import com.getircase.readingisgood.application.domain.security.JwtTokenProvider;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@Api(value = "Auth controller exposes siginin and signup REST APIs")
+@Api(value = "Auth controller exposes siginin REST APIs")
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
