@@ -3,6 +3,7 @@ package com.getircase.readingisgood.controller;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.getircase.readingisgood.adapters.api.request.CustomerCreationRequest;
+import com.getircase.readingisgood.adapters.api.request.LoginRequest;
 import com.getircase.readingisgood.application.ports.incoming.CustomerUseCase;
 import lombok.SneakyThrows;
 import org.junit.Test;
@@ -13,6 +14,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -21,10 +23,11 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+@TestPropertySource(properties = "spring.mongodb.embedded.version=3.5.5")
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-class CustomerControllerTest {
+public class CustomerControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -49,6 +52,33 @@ class CustomerControllerTest {
 
     }
 
+    @SneakyThrows
+    @Test
+    public void it_should_not_authenticate_customer() {
+        LoginRequest loginRequest = new LoginRequest();
+        loginRequest.setUsername("test");
+        loginRequest.setPassword("test");
+        this.mockMvc.perform(post("/api/auth/sign-in")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(serializeToJson(loginRequest)))
+                .andDo(print())
+                .andExpect(status().isInternalServerError());
+
+    }
+
+    @SneakyThrows
+    @Test
+    public void it_should_authenticate_customer() {
+        LoginRequest loginRequest = new LoginRequest();
+        loginRequest.setUsername("remziyesahin");
+        loginRequest.setPassword("12345");
+        this.mockMvc.perform(post("/api/auth/sign-in")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(serializeToJson(loginRequest)))
+                .andDo(print())
+                .andExpect(status().isInternalServerError());
+
+    }
     private String serializeToJson(Object object) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
         return objectMapper.writeValueAsString(object);

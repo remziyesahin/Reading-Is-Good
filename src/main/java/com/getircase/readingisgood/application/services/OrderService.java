@@ -52,6 +52,7 @@ public class OrderService implements OrderUseCase {
         Set<OrderItem> orderItems = new HashSet<>();
         orderCreationCommand.getOrders().forEach(o -> {
             Optional<Book> book = bookRepositoryUseCase.findByBookId(o.getBookId());
+            if (book.isEmpty()) throw new BookRetailObjectNotFoundException("Book not exist for " + o.getBookId());
 
             if (o.getQuantity() > book.get().getUnitsInStock()) {
                 throw new BookRetailObjectNotFoundException("Insufficient stock for "+ book.get().getTitle() + " book.");
