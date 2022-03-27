@@ -5,7 +5,6 @@ import org.springframework.data.annotation.*;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Data
 public class BaseEntity implements Serializable {

@@ -1,6 +1,5 @@
 package com.getircase.readingisgood.application.ports.incoming;
 
-import com.getircase.readingisgood.adapters.api.request.BookUpdateRequest;
 import com.getircase.readingisgood.application.ports.incoming.dto.BookDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
