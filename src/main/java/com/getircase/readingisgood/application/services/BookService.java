@@ -1,6 +1,5 @@
 package com.getircase.readingisgood.application.services;
 
-import com.getircase.readingisgood.adapters.api.request.BookUpdateRequest;
 import com.getircase.readingisgood.adapters.persistance.entity.Book;
 import com.getircase.readingisgood.application.domain.exception.BookRetailObjectNotFoundException;
 import com.getircase.readingisgood.application.ports.incoming.BookUseCase;
@@ -8,7 +7,6 @@ import com.getircase.readingisgood.application.ports.outgoing.BookRepositoryUseC
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -20,6 +18,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class BookService implements BookUseCase {
     private final BookRepositoryUseCase bookRepositoryUseCase;
+    // TODO private final ModelMapper modelMapper;
 
     @Override
     public void createBook(BookCreationCommand bookCreationCommand) {

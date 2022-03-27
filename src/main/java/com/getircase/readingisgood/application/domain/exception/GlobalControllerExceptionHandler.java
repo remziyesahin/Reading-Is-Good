@@ -66,7 +66,23 @@ public class GlobalControllerExceptionHandler {
 
     @ExceptionHandler(BookRetailObjectNotFoundException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    ErrorResponse handleMethodArgumentNotValidException(HttpServletRequest httpServletRequest, BookRetailObjectNotFoundException e) {
+    ErrorResponse handleBookRetailObjectNotFoundException(HttpServletRequest httpServletRequest, BookRetailObjectNotFoundException e) {
+        String exceptionDetailMessage = e.getMessage();
+        return buildErrorResponse(httpServletRequest, HttpStatus.BAD_REQUEST, exceptionDetailMessage);
+
+    }
+
+    @ExceptionHandler(UserAlreadyExistException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    ErrorResponse handleUserAlreadyExistException(HttpServletRequest httpServletRequest, UserAlreadyExistException e) {
+        String exceptionDetailMessage = e.getMessage();
+        return buildErrorResponse(httpServletRequest, HttpStatus.BAD_REQUEST, exceptionDetailMessage);
+
+    }
+
+    @ExceptionHandler(InsufficientStockException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    ErrorResponse handleInsufficientStockException(HttpServletRequest httpServletRequest, InsufficientStockException e) {
         String exceptionDetailMessage = e.getMessage();
         return buildErrorResponse(httpServletRequest, HttpStatus.BAD_REQUEST, exceptionDetailMessage);
 

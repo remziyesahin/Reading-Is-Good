@@ -17,20 +17,7 @@ public class CustomerController {
 
     @PostMapping("/registration")
     public void createCustomer(@RequestBody CustomerCreationRequest customerRequest) {
-        customerUseCase.createCustomer(customerRequest);
+        customerUseCase.createCustomer(customerRequest.toCommand());
     }
-
-    @GetMapping("/sign-in")
-    public void signIn(@RequestBody LoginRequest loginRequest) {
-        customerUseCase.signIn(loginRequest);
-    }
-
-    /* TODO:
-    @GetMapping("/confirm")
-    public String confirmEmail(@RequestParam("token") String token) {
-
-    }
-
-     */
 
 }
