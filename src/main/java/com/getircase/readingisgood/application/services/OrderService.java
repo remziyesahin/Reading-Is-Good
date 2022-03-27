@@ -35,13 +35,14 @@ public class OrderService implements OrderUseCase {
     public void createOrder(OrderCreationCommand orderCreationCommand) {
         log.info("createOrder---->");
         Customer currentUser = authenticationService.getCurrentUser();
-
+        log.info("Customer " + currentUser.getUsername() + " will create order!");
+        //Prepare order and order items
         Order order = prepareOrder(orderCreationCommand, currentUser.getId());
 
         orderItemRepositoryUseCase.saveOrderItems(order.getOrderItems().stream().toList());
 
         orderRepositoryUseCase.saveOrder(order);
-
+        log.info(currentUser.getUsername() + " created new order!");
         log.info("<----createOrder");
     }
 
@@ -102,11 +103,13 @@ public class OrderService implements OrderUseCase {
         log.info("searchOrders---->");
 
         Page<Order> orders = orderRepositoryUseCase.findByCreatedDateBetween(orderSearchCommand.getStartDate(), orderSearchCommand.getEndDate(), pageable);
+
         List<OrderResponseDto> orderList = new ArrayList<>();
         orders.forEach(order -> {
             OrderResponseDto orderResponseDto = orderToOrderResponseDto(order);
             orderList.add(orderResponseDto);
         });
+        log.info("Orders are searched between " + orderSearchCommand.getStartDate() + " and " + orderSearchCommand.getEndDate());
         log.info("<----searchOrders");
 
         return new PageImpl<>(orderList, pageable, orders.getTotalElements());

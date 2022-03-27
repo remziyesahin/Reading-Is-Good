@@ -18,7 +18,6 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class BookService implements BookUseCase {
     private final BookRepositoryUseCase bookRepositoryUseCase;
-    // TODO private final ModelMapper modelMapper;
 
     @Override
     public void createBook(BookCreationCommand bookCreationCommand) {

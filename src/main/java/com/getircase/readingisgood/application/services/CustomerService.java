@@ -28,6 +28,7 @@ public class CustomerService implements CustomerUseCase {
         roles.add(UserRole.USER);
         //Confirm email address, it must be unique
         confirmEmail(customerCreationCommand.getEmail());
+
         Customer customer = Customer.builder()
                 .name(customerCreationCommand.getName())
                 .lastName(customerCreationCommand.getLastName())
@@ -37,9 +38,9 @@ public class CustomerService implements CustomerUseCase {
                 .userRole(roles)
                 .build();
 
-
         customerRepositoryUseCase.saveCustomer(customer);
 
+        log.info(customer.getUsername() + " created as a new customer");
         log.info("<----createCustomer");
     }
 

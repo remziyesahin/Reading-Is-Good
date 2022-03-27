@@ -1,4 +1,4 @@
-package com.getircase.readingisgood.adapters.api;
+package com.getircase.readingisgood.adapters.api.controller;
 
 import com.getircase.readingisgood.adapters.api.request.BookCreationRequest;
 import com.getircase.readingisgood.adapters.api.request.BookUpdateRequest;
