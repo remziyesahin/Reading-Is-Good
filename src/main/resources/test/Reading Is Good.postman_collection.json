@@ -1,0 +1,395 @@
+{
+	"info": {
+		"_postman_id": "c78411e2-7990-46ae-9dc8-ae3174ffbbaa",
+		"name": "Reading Is Good",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "createCustomer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json; Charset=UTF-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\":\"Remziye\",\r\n  \"lastName\":\"Şahin\",\r\n  \"username\":\"remziyesahin\",\r\n  \"email\":\"remziye.csahin@gmail.com\",\r\n  \"password\":\"12345\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/customer/registration",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"customer",
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createBook",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json; Charset=UTF-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"books\": [\r\n\t\t{\r\n\t\t\t\"title\": \"Core Java Volume I – Fundamentals\",\r\n\t\t\t\"author\": \"Cay S. Horstmann\",\r\n\t\t\t\"lastEdition\": \"11th Edition\",\r\n\t\t\t\"year\": \"2001\",\r\n\t\t\t\"publisher\": \"Prentice Hall\",\r\n\t\t\t\"isbn\": \"0135166306\",\r\n\t\t\t\"unitPrice\": \"75.48\",\r\n\t\t\t\"unitsInStock\": \"2\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"title\": \"Effective Java\",\r\n\t\t\t\"author\": \"Joshua Bloch\",\r\n\t\t\t\"lastEdition\": \"3rd Edition\",\r\n\t\t\t\"year\": \"2001\",\r\n\t\t\t\"publisher\": \"Addison Wesley\",\r\n\t\t\t\"isbn\": \"0135166306\",\r\n\t\t\t\"unitPrice\": \"75.48\",\r\n\t\t\t\"unitsInStock\": \"100\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"title\": \"Java: A Beginner’s Guide\",\r\n\t\t\t\"author\": \"Herbert Schildt\",\r\n\t\t\t\"lastEdition\": \"8th Edition\",\r\n\t\t\t\"year\": \"2001\",\r\n\t\t\t\"publisher\": \"McGraw-Hill Education\",\r\n\t\t\t\"isbn\": \"0135166306\",\r\n\t\t\t\"unitPrice\": \"75.48\",\r\n\t\t\t\"unitsInStock\": \"10\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"title\": \"Java - The Complete Reference\",\r\n\t\t\t\"author\": \"Herbert Schildt\",\r\n\t\t\t\"lastEdition\": \"11th Edition\",\r\n\t\t\t\"year\": \"2001\",\r\n\t\t\t\"publisher\": \"McGraw Hill Education\",\r\n\t\t\t\"isbn\": \"0135166306\",\r\n\t\t\t\"unitPrice\": \"75.48\",\r\n\t\t\t\"unitsInStock\": \"5\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"title\": \"Head First Java\",\r\n\t\t\t\"author\": \"Kathy Sierra & Bert Bates\",\r\n\t\t\t\"lastEdition\": \"2nd Edition\",\r\n\t\t\t\"year\": \"2001\",\r\n\t\t\t\"publisher\": \"Shroff/O’Reilly\",\r\n\t\t\t\"isbn\": \"0135166306\",\r\n\t\t\t\"unitPrice\": \"75.48\",\r\n\t\t\t\"unitsInStock\": \"0\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"title\": \"Java Concurrency in Practice\",\r\n\t\t\t\"author\": \"Brian Goetz with Tim Peierls, Joshua Bloch, Joseph Bowbeer, David Holmes, and Doug Lea\",\r\n\t\t\t\"lastEdition\": \"1st Edition\",\r\n\t\t\t\"year\": \"2001\",\r\n\t\t\t\"publisher\": \"Addison-Wesley Professional\",\r\n\t\t\t\"isbn\": \"0135166306\",\r\n\t\t\t\"unitPrice\": \"75.48\",\r\n\t\t\t\"unitsInStock\": \"150\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"title\": \"Test-Driven: TDD and Acceptance TDD for Java Developers\",\r\n\t\t\t\"author\": \"Lasse Koskela\",\r\n\t\t\t\"lastEdition\": \"1st Edition\",\r\n\t\t\t\"year\": \"2001\",\r\n\t\t\t\"publisher\": \"Manning Publications\",\r\n\t\t\t\"isbn\": \"0135166306\",\r\n\t\t\t\"unitPrice\": \"60.00\",\r\n\t\t\t\"unitsInStock\": \"120\"\r\n\t\t}\r\n\t]\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/book",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createOrder",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "tokenType",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyZW16aXllc2FoaW4iLCJpYXQiOjE2NDgzMDc1MzQsImV4cCI6MTY0ODM5MzkzNH0.U6FEyJgvRY5OFoX2moCSf6D9MQjaITHlB4rFwQdVcUOx2myZMfkHVfycdQZY5LK_9me6dUjfJ3fkpxzQ6ulgdQ",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json; Charset=UTF-8"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"orders\": [\r\n\t\t{\r\n\t\t\t\"bookId\": \"6240307007b5a973c36d4309\",\r\n\t\t\t\"quantity\": \"1\"\r\n\t\t},\r\n        {\r\n\t\t\t\"bookId\": \"6240307007b5a973c36d430a\",\r\n\t\t\t\"quantity\": \"1\"\r\n\t\t},\r\n        {\r\n\t\t\t\"bookId\": \"6240307007b5a973c36d430b\",\r\n\t\t\t\"quantity\": \"1\"\r\n\t\t}\r\n\t]\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/order",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getOrder",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "tokenType",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyZW16aXllc2FoaW4iLCJpYXQiOjE2NDgzMDc1MzQsImV4cCI6MTY0ODM5MzkzNH0.U6FEyJgvRY5OFoX2moCSf6D9MQjaITHlB4rFwQdVcUOx2myZMfkHVfycdQZY5LK_9me6dUjfJ3fkpxzQ6ulgdQ",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json; Charset=UTF-8"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/order/623f3f3b76eec951e7e0fddf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"order",
+						"623f3f3b76eec951e7e0fddf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMonthlyStatistic",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "tokenType",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyZW16aXllc2FoaW4iLCJpYXQiOjE2NDgzMDc1MzQsImV4cCI6MTY0ODM5MzkzNH0.U6FEyJgvRY5OFoX2moCSf6D9MQjaITHlB4rFwQdVcUOx2myZMfkHVfycdQZY5LK_9me6dUjfJ3fkpxzQ6ulgdQ",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json; Charset=UTF-8"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/monthlyStatistic/623f33c872c1b2509cdba9b5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"monthlyStatistic",
+						"623f33c872c1b2509cdba9b5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchOrder",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "tokenType",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyZW16aXllc2FoaW4iLCJpYXQiOjE2NDgzMDc1MzQsImV4cCI6MTY0ODM5MzkzNH0.U6FEyJgvRY5OFoX2moCSf6D9MQjaITHlB4rFwQdVcUOx2myZMfkHVfycdQZY5LK_9me6dUjfJ3fkpxzQ6ulgdQ",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json; Charset=UTF-8"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"startDate\":\"25-03-2022 16:28:43\",\r\n    \"endDate\":\"27-03-2022 16:28:43\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/order/search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"order",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json; Charset=UTF-8"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"remziyesahin\",\r\n    \"password\":\"12345\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/sign-in",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"sign-in"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateBook",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json; Charset=UTF-8"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"unitsInStock\": \"2\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/book/623e9bcd46a2d17e73324f23",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"book",
+						"623e9bcd46a2d17e73324f23"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "tokenType",
+				"value": "",
+				"type": "string"
+			},
+			{
+				"key": "accessToken",
+				"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyZW16aXllc2FoaW4iLCJpYXQiOjE2NDgzMDc1MzQsImV4cCI6MTY0ODM5MzkzNH0.U6FEyJgvRY5OFoX2moCSf6D9MQjaITHlB4rFwQdVcUOx2myZMfkHVfycdQZY5LK_9me6dUjfJ3fkpxzQ6ulgdQ",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyZW16aXllc2FoaW4iLCJpYXQiOjE2NDgzMDc1MzQsImV4cCI6MTY0ODM5MzkzNH0.U6FEyJgvRY5OFoX2moCSf6D9MQjaITHlB4rFwQdVcUOx2myZMfkHVfycdQZY5LK_9me6dUjfJ3fkpxzQ6ulgdQ"
+		}
+	]
+}
