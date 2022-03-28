@@ -1,0 +1,16 @@
+{
+  "orders": [
+    {
+      "bookId": "6240307007b5a973c36d4309",
+      "quantity": "1"
+    },
+    {
+      "bookId": "6240307007b5a973c36d430a",
+      "quantity": "1"
+    },
+    {
+      "bookId": "6240307007b5a973c36d430b",
+      "quantity": "1"
+    }
+  ]
+}

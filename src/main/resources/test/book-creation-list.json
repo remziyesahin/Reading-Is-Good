@@ -1,0 +1,74 @@
+{
+  "books": [
+    {
+      "title": "Core Java Volume I – Fundamentals",
+      "author": "Cay S. Horstmann",
+      "lastEdition": "11th Edition",
+      "year": "2001",
+      "publisher": "Prentice Hall",
+      "isbn": "0135166306",
+      "unitPrice": "75.48",
+      "unitsInStock": "2"
+    },
+    {
+      "title": "Effective Java",
+      "author": "Joshua Bloch",
+      "lastEdition": "3rd Edition",
+      "year": "2001",
+      "publisher": "Addison Wesley",
+      "isbn": "0135166306",
+      "unitPrice": "75.48",
+      "unitsInStock": "100"
+    },
+    {
+      "title": "Java: A Beginner’s Guide",
+      "author": "Herbert Schildt",
+      "lastEdition": "8th Edition",
+      "year": "2001",
+      "publisher": "McGraw-Hill Education",
+      "isbn": "0135166306",
+      "unitPrice": "75.48",
+      "unitsInStock": "10"
+    },
+    {
+      "title": "Java - The Complete Reference",
+      "author": "Herbert Schildt",
+      "lastEdition": "11th Edition",
+      "year": "2001",
+      "publisher": "McGraw Hill Education",
+      "isbn": "0135166306",
+      "unitPrice": "75.48",
+      "unitsInStock": "5"
+    },
+    {
+      "title": "Head First Java",
+      "author": "Kathy Sierra & Bert Bates",
+      "lastEdition": "2nd Edition",
+      "year": "2001",
+      "publisher": "Shroff/O’Reilly",
+      "isbn": "0135166306",
+      "unitPrice": "75.48",
+      "unitsInStock": "0"
+    },
+    {
+      "title": "Java Concurrency in Practice",
+      "author": "Brian Goetz with Tim Peierls, Joshua Bloch, Joseph Bowbeer, David Holmes, and Doug Lea",
+      "lastEdition": "1st Edition",
+      "year": "2001",
+      "publisher": "Addison-Wesley Professional",
+      "isbn": "0135166306",
+      "unitPrice": "75.48",
+      "unitsInStock": "150"
+    },
+    {
+      "title": "Test-Driven: TDD and Acceptance TDD for Java Developers",
+      "author": "Lasse Koskela",
+      "lastEdition": "1st Edition",
+      "year": "2001",
+      "publisher": "Manning Publications",
+      "isbn": "0135166306",
+      "unitPrice": "60.00",
+      "unitsInStock": "120"
+    }
+  ]
+}
