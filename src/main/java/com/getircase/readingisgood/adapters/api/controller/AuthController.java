@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @Api(value = "Auth controller exposes siginin REST APIs")
 @RestController
 @RequestMapping("/api/auth")
@@ -29,7 +31,7 @@ public class AuthController {
 
     @ApiOperation(value = "REST API to Register or Signup user to Book Online Retail app")
     @PostMapping("/sign-in")
-    public ResponseEntity<JWTAuthResponse> authenticateUser(@RequestBody LoginRequest loginRequest){
+    public ResponseEntity<JWTAuthResponse> authenticateUser(@Valid @RequestBody LoginRequest loginRequest){
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
                 loginRequest.getUsername(), loginRequest.getPassword()));
 

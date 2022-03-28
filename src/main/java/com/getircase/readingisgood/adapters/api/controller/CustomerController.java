@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/api/customer")
 @Validated
@@ -18,7 +20,7 @@ public class CustomerController {
     private final CustomerUseCase customerUseCase;
 
     @PostMapping("/registration")
-    public void createCustomer(@RequestBody CustomerCreationRequest customerRequest) {
+    public void createCustomer(@Valid @RequestBody CustomerCreationRequest customerRequest) {
         customerUseCase.createCustomer(customerRequest.toCommand());
     }
 

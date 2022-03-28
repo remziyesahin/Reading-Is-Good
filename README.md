@@ -39,6 +39,9 @@ run ReadingisgoodApplication.java class
 ```
 
 ## Technical
-I developed it using Java with Spring Boot. 
-I used Swagger UI to generate documentation for Restful API.
-I used Hexagonal Architecture(Port and Adapter)
+* I developed it using Java with Spring Boot. 
+* I used Swagger UI to generate documentation for Restful API.
+* I used Hexagonal Architecture(Port and Adapter)
+* I used Global Exception Handler using Controller Advice for validation
+* Analyzed with Sonar Lint for code smell, unused methods, imports TODO vs ..
+* Added Postman collection

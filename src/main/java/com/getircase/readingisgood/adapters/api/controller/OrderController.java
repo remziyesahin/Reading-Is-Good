@@ -22,18 +22,18 @@ public class OrderController {
     private final OrderUseCase orderUseCase;
 
     @PostMapping
-    public void createOrder(@RequestBody OrderCreationRequest orderRequest) {
+    public void createOrder(@Valid @RequestBody OrderCreationRequest orderRequest) {
         orderUseCase.createOrder(orderRequest.toCommand());
     }
 
     @GetMapping("/{orderId}")
-    public OrderResponseDto getOrder(@PathVariable String orderId) {
+    public OrderResponseDto getOrder(@Valid @PathVariable String orderId) {
         OrderRequest orderRequest = new OrderRequest(orderId);
         return orderUseCase.getOrder(orderRequest.toCommand());
     }
 
     @GetMapping("/search")
-    public Page<OrderResponseDto> searchOrders(@RequestBody @Valid OrderSearchRequest orderSearchRequest, Pageable pageable) {
+    public Page<OrderResponseDto> searchOrders(@Valid @RequestBody OrderSearchRequest orderSearchRequest, Pageable pageable) {
         return orderUseCase.searchOrders(orderSearchRequest.toCommand(), pageable);
     }
 

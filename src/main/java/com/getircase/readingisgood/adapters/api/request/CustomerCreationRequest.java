@@ -13,18 +13,18 @@ import javax.validation.constraints.Size;
 @NoArgsConstructor
 public class CustomerCreationRequest {
 
-    @NotNull
+    @NotNull(message = "Name should be filled!")
     private String name;
     private String lastName;
 
-    @NotNull
+    @NotNull(message = "Username should be filled!")
     @Size(min = 8, max = 255)
     private String username;
 
-    @NotNull
+    @NotNull(message = "Email should be filled!")
     private String email;
 
-    @NotNull
+    @NotNull(message = "Password should be filled!")
     private String password;
 
     public CustomerCreationCommand toCommand(){

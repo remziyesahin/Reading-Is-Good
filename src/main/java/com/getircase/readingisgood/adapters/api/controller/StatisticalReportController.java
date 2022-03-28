@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -17,7 +18,7 @@ public class StatisticalReportController {
     private final StatisticsUseCase statisticsUseCase;
 
     @GetMapping("{customerId}")
-    public List<OrderStatisticsDto> getOrderStatistics(@PathVariable String customerId) {
+    public List<OrderStatisticsDto> getOrderStatistics(@Valid @PathVariable String customerId) {
         return statisticsUseCase.getMonthlyOrderStatistics(new StatisticRequest(customerId).toCommand());
     }
 }
